@@ -34,6 +34,10 @@ public class AmazonHeroWidget {
         entry1.setVisualStyle(VisualStyle.PEEKABLE);
         entry1.setPrimaryText("item 1");
         entry1.setSecondaryText("details of 1");
+        ListEntry entry2 = new ListEntry(context);
+        entry2.setVisualStyle(VisualStyle.PEEKABLE);
+        entry2.setPrimaryText("item 2");
+        entry2.setSecondaryText("details of 2");
 
         Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.f2);
         File file = new File(context.getFilesDir().toString(), "f2.jpg");
@@ -47,9 +51,11 @@ public class AmazonHeroWidget {
         Log.d(TAG, "wrote f2.jpg to " + file.toString());
         // FileOutputStream fos = new FileOutputStream("f2.jpg", Context.MODE_PRIVATE);
 
-        entry1.setPrimaryIcon(Uri.fromFile(file));
+        entry1.setPrimaryIcon(R.drawable.f2);
+        entry2.setPrimaryIcon(Uri.fromFile(file));
         try {
            listEntries.add(entry1); 
+           listEntries.add(entry2);
         } catch(Exception e) {
             Log.d(TAG, "error", e);
         }
